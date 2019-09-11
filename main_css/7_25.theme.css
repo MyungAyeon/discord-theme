@@ -1,0 +1,150 @@
+//META{"name":"7_25","description":"Discord 7_25 Update","author":"명아연#6491","version":"1"}*//
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+
+/* 배경화면 이미지 */
+#app-mount {
+	background-image: url(https://i.imgur.com/PEjIwKH.jpg);
+	background-size: cover;
+}
+
+/* 투명화 관련 */
+div[class^="app-2rEoOp"] {
+	--header-primary: #FFF;												/* 주요 헤더 색상 */
+	--header-secondary: #FFF;											/* 나머지 헤더 색상 */
+	--text-normal: #FFF;												/* 평소 폰트 색상 */
+	--text-muted: #FFF;													/* 평소 이 외 폰트 색상 */
+	--text-link: #FFF;													/* 링크 폰트 색상 */
+	--channels-default: #FFF;											/* 채널 폰트 색상 */
+	--interactive-normal: #FFF;											/* 평소 버튼 색상 */
+	--interactive-hover: #FFF;											/* 버튼 마우스 반응 색상 */
+	--interactive-active: #FFF;											/* 버튼 활성화 색상 */
+	--interactive-muted: rgba(255, 255, 255, .5);						/* 평소 이 외 버튼 색상 */
+	--background-tertiary: rgba(0, 0, 0, 0);							/* 배경 */
+	--background-primary: rgba(0, 0, 0, 0);								/* 주요 배경 */
+	--background-secondary: rgba(0, 0, 0, 0);							/* 나머지 배경 */
+	--background-accent: rgba(0, 0, 0, 0);								/* 강조 배경 */
+	/*--background-floating: rgba(0, 0, 0, 1);*/						/* ? */
+	--background-modifier-hover: rgba(0, 0, 0, .2);						/* 마우스 반응 배경 */
+	--background-modifier-active: rgba(0, 0, 0, .5);					/* 마우스 클릭시 배경 */
+	--background-modifier-selected: rgba(0, 0, 0, .35);					/* 선택 배경 */
+	--background-modifier-accent: rgba(0, 0, 0, 0);						/* 반응 및 선 배경 */
+	/*--elevation-low: 0 5px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+	--elevation-high: 0 8px 16px rgba(0,0,0,0.24);*/
+	/*--guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);*/
+	--channeltextarea-background: rgba(0, 0, 0, .4);					/* 채팅 구역 배경 */
+	/*--activity-panel-background: #FFF;*/
+	--deprecated-panel-background: rgba(0, 0, 0, 0);					/* 내 정보 패널 배경 */
+	--deprecated-card-bg: rgba(0, 0, 0, .3);							/* 내 계정 배경 */
+	--deprecated-card-editable-bg: rgba(0, 0, 0, .3);					/* 내 계정 수정 배경 */
+	--deprecated-store-bg: rgba(0, 0, 0, 0);							/* 니트로 탭 배경 */
+	/*--deprecated-quickswitcher-input-background: #FFF;*/
+	--deprecated-text-input-bg: rgba(0, 0, 0, 0);						/* 입력 상자 배경 */
+	--deprecated-text-input-border: rgba(0, 0, 0, .3);					/* 입력 상자  테두리 */
+	--deprecated-text-input-border-hover: rgba(0, 0, 0, .6);			/* 입력 상자 테두리 마우스 반응 */
+	--deprecated-text-input-border-disabled: rgba(255, 255, 255, .5);	/* 입력 상자 테두리 비활성화 */
+	/*--deprecated-text-input-prefix: #000;*/
+}
+
+/* 타이틀바 관련 */
+div[class^="app-19_DXt"] {
+	margin-top: .6%;	/* 상단과 겹치지않게 하단 위치 조절 */
+}
+div[class^="typeWindows-"] {
+	height: 3%;		/*┐*/
+	margin-top: 0;	/*├ 타이틀바 버튼 커스텀을 위한 높이, 간격 조절 */
+	z-index: 999;	/*┘*/
+}
+div[class^="typeWindows-"] div[class^="wordmark"] svg {
+	display: none; /* 기존 디스코드 SVG 비활성화 */
+}
+div[class^="typeWindows-"] div[class^="wordmark"]::before {
+	content: url("https://i.imgur.com/Ok3tGTG.png");	/*┐*/
+	transform: scale(.055);								/*│*/
+	position: fixed;									/*│*/
+	display: block;										/*├ 커스텀 디스코드 아이콘 */
+	left: -225px;										/*│*/
+	top: -230px;										/*┘*/
+}
+div[class^="typeWindows-"] div[class^="wordmark"]::after {
+	content: "DISCORD ☆";							/*┐*/
+	font-family: 'Roboto Condensed', sans-serif;	/*│*/
+	font-size: 20px;								/*│*/
+	color: #fff;									/*│*/
+	position: absolute;								/*├ 커스텀 디스코드 텍스트 */
+	display: block;									/*│*/
+	width: 100px;									/*│*/
+	left: 50px;										/*│*/
+	top: 9.5px;										/*┘*/
+}
+
+/* 타이틀바 버튼 관련 */
+div[class*="titleBar-"] div[class*="winButton-"] {
+	width: 40px;		/*┐*/
+	height: 25px;		/*│*/
+	opacity: 1;			/*├ 버튼 크기 및 간격 조절 */
+	top: 4px;			/*│*/
+	margin-right: 4px;	/*┘*/
+}
+div[class*="titleBar-"] div[class*="winButtonClose-"]:hover {
+	background-color: rgba(255, 0, 0, .75); /* 종료 버튼에 마우스 올렸을때 배경 색상 */
+}
+div[class*="titleBar-"] div[class*="winButtonMinMax-"]:hover {
+	background-color: rgba(255, 255, 255, .25); /* 최소화, 최대화 버튼에 마우스 올렸을때 배경 색상 */
+}
+div[class^="winButtonClose-"] svg {
+	display: none;
+}
+div[class^="winButtonMinMax-"] svg {
+	display: none;
+}
+.da-winButton {
+	width: 50px;
+}
+.da-winButtonClose:after {
+	content: url(https://i.imgur.com/VHdZYP4.png);
+	color: #FFF;
+}
+.da-winButton:nth-of-type(3):after {
+	content: 'o';
+	color: #FFF;
+}
+.da-winButton:nth-of-type(4):after {
+	content: "n";
+	color: #FFF;
+}
+
+
+/* 읽지않은 알림 */
+div[class^="numberBadge-"] {
+	animation: New 1.8s infinite;
+}
+
+/* 프레임 애니메이션 */
+@-webkit-keyframes New {
+	0% {
+		-webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+	}
+	70% {
+		-webkit-box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+	}
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+	width: 9px !important;
+}
+::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, .25) !important;
+	border-radius: 10px !important;
+}
+::-webkit-scrollbar-track-piece {
+	background: transparent !important;
+	border: none !important;
+}
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, .5) !important;
+	border: none !important;
+}
